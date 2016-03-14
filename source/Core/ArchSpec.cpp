@@ -152,7 +152,7 @@ static const CoreDefinition g_core_definitions[] =
     { eByteOrderLittle, 4, 1, 1 , llvm::Triple::kalimba , ArchSpec::eCore_kalimba5  , "kalimba5" },
 
     // MSP430
-    { eByteOrderLittle, 2, 1, 1 , llvm::Triple::msp430 , ArchSpec::eCore_msp430  , "msp430" }
+    { eByteOrderLittle, 2, 2, 2 , llvm::Triple::msp430 , ArchSpec::eCore_msp430  , "msp430" }
 };
 
 // Ensure that we have an entry in the g_core_definitions for each core. If you comment out an entry above,
