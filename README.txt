@@ -1,7 +1,6 @@
 MSP430 LLDB Debugger
 ====================
-
-This is an LLDB based MSP430 debugger which has been developed to work with the mspdebug gdb-server (note that mspdebug can be used as a standalone debugger).
+This is an LLDB-based MSP430 debugger which has been developed to work with the mspdebug gdb-server (note that mspdebug can be used as a standalone debugger).
 
 Check out the slides from the tutorial given at Euro LLVM Developers' Conference 2016, Barcelona:
     ... (to follow after the conference)
@@ -21,23 +20,25 @@ Tried & tested build systems:
 Tried & tested compilers:
 *  gcc 4.8.5
 *  clang 3.8
+Tried & tested platforms:
+*  Linux
 Tried & tested hardware:
 * mspdebug simulator
 * MSP-EXP430G2 LaunchPad development tool
 
-Building with ninja
+Building with make
 -------------------
 
     mkdir build && cd build
-    cmake -G "Ninja" -DLLVM_TARGETS_TO_BUILD=MSP430 <llvm_root_directory>
-    ninja lldb
+    cmake -G "Unix Makefiles" -DLLVM_TARGETS_TO_BUILD=MSP430 <llvm_root_directory>
+    make lldb
 
 
 Compiling MSP430 examples
 -------------------------
     Step 1: Obtain the cross-compiler and binutils. 
     
-    On Debian based Linux distributions:
+    On Debian-based Linux distributions:
     > sudo apt-get install binutils-msp430 gcc-msp430 msp430-libc mspdebug
 
     Downloading from the vendor:
