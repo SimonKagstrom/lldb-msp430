@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#===-- x86_64_target_definition.py -----------------------------*- C++ -*-===//
+#===-- msp430_target_definition.py -----------------------------*- C++ -*-===//
 #
 #                     The LLVM Compiler Infrastructure
 #
@@ -15,27 +15,14 @@
 #   plugin.process.gdb-remote.target-definition-file
 # This setting should be used when you are trying to connect to a 
 # remote GDB server that doesn't support any of the register discovery
-# packets that LLDB normally uses. 
+# packets that LLDB normally uses. This is the case for mspdebug,
+# a gdb-server for MSP430 that LLDB was tested to work with.
 #
-# Why is this necessary? LLDB doesn't require a new build of LLDB that
-# targets each new architecture you will debug with. Instead, all
-# architectures are supported and LLDB relies on extra GDB server 
-# packets to discover the target we are connecting to so that is can
-# show the right registers for each target. This allows the GDB server
-# to change and add new registers without requiring a new LLDB build
-# just so we can see new registers.
-#
-# This file implements the x86_64 registers for the darwin version of
-# GDB and allows you to connect to servers that use this register set. 
-# 
 # USAGE
 #
-# (lldb) settings set plugin.process.gdb-remote.target-definition-file /path/to/x86_64_target_definition.py
-# (lldb) gdb-remote other.baz.com:1234
+# (lldb) settings set plugin.process.gdb-remote.target-definition-file /path/to/msp430_target_definition.py
+# (lldb) gdb-remote 2000
 #
-# The target definition file will get used if and only if the 
-# qRegisterInfo packets are not supported when connecting to a remote
-# GDB server.
 #----------------------------------------------------------------------
 from lldb import *
 
