@@ -26,7 +26,7 @@ int main(void)
         /* Turn LED on (0'th bit set 1) and off (0'th bit set 0)*/
         P1OUT ^= 0x01;
         i = 99999;
-        while (i != 0);
+        while (i != 0)
         {
             i--;
         }
