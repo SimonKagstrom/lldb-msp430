@@ -1,3 +1,5 @@
+NOTE: Please note that this is a preview and the history is currently missing. It will be fixed and updated as soon as possible.
+
 MSP430 LLDB Debugger
 ====================
 This is an LLDB-based MSP430 debugger which has been developed to work with the mspdebug gdb-server (note that mspdebug can be used as a standalone debugger).
