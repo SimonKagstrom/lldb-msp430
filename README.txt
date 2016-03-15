@@ -1,12 +1,12 @@
 MSP430 LLDB Debugger
 ====================
 
-This is an LLDB based MSP430 debugger which was developed to work with the mspdebug gdb-server (note that mspdebug can be used as a standalone debugger).
+This is an LLDB based MSP430 debugger which has been developed to work with the mspdebug gdb-server (note that mspdebug can be used as a standalone debugger).
 
 Check out the slides from the tutorial given at Euro LLVM Developers' Conference 2016, Barcelona:
     ... (to follow after the conference)
 
-In Codepley/examples you will find source code for the examples that we used in our presentation. Use them at your own risk.
+In Codeplay/examples, you will find source code for the examples that we use in our presentation. Use them at your own risk.
 
 Deepak Panickal and Andrzej Warzynski, Codeplay Software
 
@@ -51,13 +51,15 @@ Compiling MSP430 examples
 Debugging with MSP430-LLDB
 --------------------------
 
-    Step 1: Start mspdebug in gdb-server mode (shell no. 1)
+    Step 1: Start mspdebug in gdb-server mode
     > mspdebug sim
     (mspdebug) prog led.elf
     (mspdebug) gdb
 
-    Step 2: Start lldb and connect to mspdebug (be default uses port 2000)
+    Step 2: Start lldb and connect to mspdebug (by default uses port 2000)
     > lldb
     (lldb) file led.elf
     (lldb) settings set plugin.process.gdb-remote.target-definition-file <lldb_root>/examples/msp430_target_definition.py
     (lldb) gdb-remote 2000
+    (lldb) b main
+    (lldb) continue
